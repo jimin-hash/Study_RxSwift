@@ -35,3 +35,7 @@ Sugar API Examples
 - drive(label.rx.text) -> 항상 main thread에서 실행, asDriver화 함께 써주어야함
 
 RxReplay -> 에러가 난다고 하여도 stream이 끊어지지않는 subject
+
+---
+참고하기 좋은 사이트
+https://github.com/TDCIAN/StudyRxSwift/blob/main/Note.md
