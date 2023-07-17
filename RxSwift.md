@@ -36,6 +36,9 @@ Sugar API Examples
 
 RxReplay -> 에러가 난다고 하여도 stream이 끊어지지않는 subject
 
+메모리 순한참조도 주위해야하므로 아래의 글을 읽어보는 것도 좋을듯 하다.
+https://iamchiwon.github.io/2018/08/13/closure-mem/
+
 ---
 참고하기 좋은 사이트
 https://github.com/TDCIAN/StudyRxSwift/blob/main/Note.md
