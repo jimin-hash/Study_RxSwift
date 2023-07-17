@@ -45,13 +45,15 @@ RxReplay -> 에러가 난다고 하여도 stream이 끊어지지않는 subject
  
  ![스크린샷 2023-07-17 오후 10 29 43](https://github.com/jimin-hash/Study_RxSwift/assets/62288773/eb770f03-0565-4a03-9648-193a8f4deae9)
  View는 Reactor에게 Action을 전달하고 Reactor는 View에게 State를 전달하는 단방향 구조 
- 
+
+ https://velog.io/@sso0022/iOS-ReactorKit-%EC%95%8C%EC%95%84%EB%B3%B4%EA%B8%B0
 
 
 
 
 ---
 참고하기 좋은 사이트
+https://www.youtube.com/watch?v=iHKBNYMWd5I
 https://github.com/TDCIAN/StudyRxSwift/blob/main/Note.md
 
 
