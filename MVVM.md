@@ -22,8 +22,7 @@ MVVM 구성하는 방법은 다양함으로 아래의 요소들을 모두 써도
    - API를 통해 데이터를 가져오는 로직을 포함한다.
 5. View
    - ViewModel을 사용하기만 해야한다.
-   - ViewModel의 데이터 변경을 스스로 알아채야하므로 DataBinding이 필요하다.
-7. 
+   - ViewModel의 데이터 변경을 스스로 알아채야하므로 DataBinding이 필요하다. 
 
 
 
