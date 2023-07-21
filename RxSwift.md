@@ -42,7 +42,9 @@ RxReplay -> 에러가 난다고 하여도 stream이 끊어지지않는 subject
 - Rx에서 데이터 바인딩을 하는 하나의 방법으로 비동기 처리를 간단하게 작업할 수 있고, 통일된 방식으로 UI 바인딩과 이벤트에도 사용할 수 있는 장점이 있다.
   단점으로는 Rx의 러닝커브가 높음으로 어디까지 Rx로 구현할지 규정 지어야한다.
 - 의존성 역전을 위하여 ViewModelType을 이용하는게 좋다
+
   [SOLID] (https://velog.io/@harinnnnn/OOP-%EA%B0%9D%EC%B2%B4%EC%A7%80%ED%96%A5-5%EB%8C%80-%EC%9B%90%EC%B9%99SOLID-%EC%9D%98%EC%A1%B4%EC%84%B1-%EC%97%AD%EC%A0%84-%EC%9B%90%EC%B9%99-DIP#:~:text=%EC%9D%98%EC%A1%B4%EC%84%B1%20%EC%97%AD%EC%A0%84%20%EC%9B%90%EC%B9%99%EC%9D%B4%EB%9E%80%20%EA%B0%9D%EC%B2%B4,%EC%BD%94%EB%93%9C%EB%A5%BC%20%EC%9E%91%EC%84%B1%ED%95%A0%20%EC%88%98%20%EC%9E%88%EC%8A%B5%EB%8B%88%EB%8B%A4.)
+
   [인터페이스 주입] (https://ios-daniel-yang.tistory.com/71)
   
 ### Helper Class 이용 방법
