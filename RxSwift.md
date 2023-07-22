@@ -10,13 +10,14 @@ RxSwift의 필요성
 ### Rx의 구성 요소
 1. Observable
     subscribed -> next -> completed / error -> disposabled
-
     combine, merge, zip stream 분리 병합할 수 있다.
-2. Operator - create, subscribe, onNext, Sugar API ...
-3. Schedulers
+    이벤트 구독자, 이벤트가 발생하면 처리하는 역할, onNext, onCompleted, onError를 통해 이벤트 전달 받은 것을 확인할 수 있다.
+2. Observable -  Observer에게 이벤트(next, completed, error) 전달
+3. Operator - create, subscribe, onNext, Sugar API ...
+4. Schedulers
     DispatchQueue, OperationQueue를 매핑 
-4. Dispose
-5. Subject - observable 외부에서 값을 컨트롤할 수 있는 컴포넌트, 데이터를 넣어줄 수도 있고, subscribe 할 수 있는 양방향성이 있다.
+5. Dispose
+6. Subject - observable 외부에서 값을 컨트롤할 수 있는 컴포넌트, 데이터를 넣어줄 수도 있고, subscribe 할 수 있는 양방향성이 있다. Observable과 Observer역할을 동시에 수행.
 - PublishSubject
 - BehaviorSubject
 - AsyncSubject
@@ -36,6 +37,9 @@ Sugar API Examples
 - drive(label.rx.text) -> 항상 main thread에서 실행, asDriver화 함께 써주어야함
 
 RxReplay -> 에러가 난다고 하여도 stream이 끊어지지않는 subject
+AnyObserver -> 단순히 구독에 관련된 메소드(on, onNext, onError, onCompleted)를 구현, 단순히 전달되는 이벤트에 대해서 처리하는 기본적인 Observer
+AnyObserver를 뷰에서 발생한 이벤트를 뷰모델로 전달할 때 뷰모델의 setter로 활용합니다.
+뷰에서 throttle 등 연산자를 통해 다중 발생을 방지했기 때문에 뷰모델에서 연속적으로 이벤트를 받지 않기 때문에 이렇게 사용합니다
 
 ## 데이버 바인딩 방법
 ### Input / Output 방법
