@@ -56,8 +56,43 @@ Output: 입력받은 데이터를 변경하여 뷰에 뿌려주는 데이터 vm 
 ### Helper Class 이용 방법
 - 간단한 헬퍼 클라스로 구현이 가능하지만 여러개의 연속적인 네트워크 호출이 발생한다면 depth가 깊어지는 문제가 있다.
 
+### Signal vs driver
+공통점
+- error를 return 하지 않는다
+- main thread에서 작동한다.
+
+차이점
+![스크린샷 2023-07-24 오전 12 06 27](https://github.com/jimin-hash/Study_RxSwift/assets/62288773/5b667819-d179-4578-b4e1-2eeb2d5babf4)
+- Signal은 새로운 구독자에게 reply 하지 않는다. (Driver처럼 구독하는 순간 초기값이나 최신값을 주지 않음. 구독한 이후에 발행되는 값을 받음)
 
 
+```
+   signal.emit(onNext: { (element) in 
+   
+   }
+   
+   driver.drive(onNext: { (element) in 
+   
+   }
+```
+
+#### Public vs Behavior and 
+BehaviorRelay/BehaviorSubject는 상태를 나타낸다. 
+PublishRelay/PublishSubject는 이벤트를 나타낸다.
+따라서 사실상 PublishRelay/PublishSubject는 Signal을 사용하는 것이 맞는 것이다.
+
+그러면 Publish*를 사용할지 Behavior*를 사용할지 구분하고, 적절한 Signal과 Driver를 사용하면 됩니다. 이것의 구분은 마지막 상태 '값'을 저장해야하는지와 초기값이 필요한지 안한지에 대하여 필요하지 않다면, PublishRelay를 사용하였습니다. BehaviorRelay를 무분별하게 사용한다면 초기 값 이벤트를 방출하기 때문에 원하지 않는 플로우가 진행 될 수 있습니다 !
+
+
+### Clean Architecture
+Massive ViewModel이 되지 않고 ViewModel의 부담을 줄여지기 위해서 클린 아키텍쳐가 생겨낫다.
+비지니스 로직의 분리와 의존성을 도메인쪽으로 향하게 할 수 있다.
+3 Layers
+    1. Presentation Layer
+    2. Domain Layer
+    3. Data Layer
+이해가 안가는데 좀 더 공부해서 업데이트 해야 할 듯...
+    
 ---
 참고하기 좋은 사이트
 https://www.youtube.com/watch?v=iHKBNYMWd5I
